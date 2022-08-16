@@ -1,1 +1,1 @@
-# ZshTheme
+# ConfStore
