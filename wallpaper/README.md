@@ -14,6 +14,6 @@
 - Wave Series
     - Blue Wave
     - Oval Wave
-    - Perple Wave
+    - Purple Wave
     - Silk Wave
     - Stone Wave
