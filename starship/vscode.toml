@@ -1,0 +1,428 @@
+format = '$directory$character'
+right_format = '$username$hostname$localip$shlvl$singularity$kubernetes$vcsh$fossil_branch$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$buf$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$os$container$shell'
+add_newline = false
+
+[aws]
+format = ' [$symbol($profile)( \($region\))( \[$duration\])]($style)'
+symbol = 'AWS '
+
+[azure]
+format = ' [$symbol($subscription)]($style)'
+symbol = 'Azure '
+
+[battery]
+format = ' [$symbol$percentage]($style)'
+full_symbol = 'Battery '
+charging_symbol = 'Charging '
+discharging_symbol = 'Discharging '
+
+[buf]
+format = ' [$symbol($version)]($style)'
+symbol = 'Buf '
+
+[bun]
+format = ' [$symbol($version)]($style)'
+symbol = 'Bun '
+
+[c]
+format = ' [$symbol($version(-$name))]($style)'
+symbol = 'C '
+
+[character]
+format = '[$symbol]($style) '
+success_symbol = '[❯](bold)'
+error_symbol = '[❯](bold)'
+vimcmd_symbol = '[❮](bold)'
+vimcmd_replace_one_symbol = '[❮](bold)'
+vimcmd_replace_symbol = '[❮](bold)'
+vimcmd_visual_symbol = '[❮](bold)'
+
+[cmake]
+format = ' [$symbol($version)]($style)'
+symbol = 'CMake '
+
+[cobol]
+format = ' [$symbol($version)]($style)'
+symbol = 'Cobol '
+
+[cmd_duration]
+format = ' [$duration]($style)'
+min_time = 1_000
+disabled = false
+
+[conda]
+format = ' [$symbol$environment]($style)'
+symbol = 'Conda '
+
+[container]
+format = ' [$symbol($version)]($style)'
+symbol = 'Container '
+
+[crystal]
+format = ' [$symbol($version)]($style)'
+symbol = 'Crystal '
+
+[daml]
+format = ' [$symbol($version)]($style)'
+symbol = 'Daml '
+
+[dart]
+format = ' [$symbol($version)]($style)'
+symbol = 'Dart '
+
+[deno]
+format = ' [$symbol($version)]($style)'
+symbol = 'Deno '
+
+[directory]
+truncation_length = 1
+read_only = ' [Locked] '
+# truncation_symbol = '…/'
+
+[docker_context]
+format = '[$symbol$context]($style)'
+symbol = 'Docker '
+
+[dotnet]
+format = ' [$symbol($version )($tfm)]($style)'
+symbol = '.NET '
+
+[elixir]
+format = ' [$symbol($version)]($style)'
+symbol = 'Elixir '
+
+[elm]
+format = ' [$symbol($version)]($style)'
+symbol = 'Elm '
+
+[env_var]
+format = ' [$env_value]($style)'
+symbol = 'Env '
+
+[erlang]
+format = ' [$symbol($version)]($style)'
+symbol = 'Erlang '
+
+[fennel]
+format = ' [$symbol($version)]($style)'
+symbol = 'Fennel '
+
+# [fill]
+# symbol = '•'
+
+[fossil_branch]
+format = ' [$symbol$branch]($style)'
+symbol = 'Fossil '
+
+[gcloud]
+format = ' [$symbol$account(@$domain)(\($region\))]($style)'
+symbol = 'GCP '
+
+[git_branch]
+format = ' [$symbol$branch(:$remote_branch)]($style)'
+symbol = ''
+always_show_remote = false
+only_attached = true
+disabled = false
+
+[git_commit]
+commit_hash_length = 32
+tag_symbol = ' tag '
+disabled = false
+
+[git_state]
+format = ' \([$state($progress_current/$progress_total)]($style)\)'
+disabled = false
+
+[git_metrics]
+format = '( [+$added]($added_style))( [-$deleted]($deleted_style))'
+disabled = false
+
+[git_status]
+format = '( [\[$all_status$ahead_behind\]]($style))'
+disabled = false
+
+[golang]
+format = ' [$symbol($version)]($style)'
+symbol = 'Go '
+
+[guix_shell]
+symbol = 'Guix '
+
+[gradle]
+format = ' [$symbol($version)]($style)'
+symbol = 'Gradle '
+
+[haskell]
+format = ' [$symbol($version)]($style)'
+symbol = 'Haskell '
+
+[haxe]
+format = ' [$symbol($version)]($style)'
+symbol = 'Haxe '
+
+[helm]
+format = ' [$symbol($version)]($style)'
+symbol = 'Helm '
+
+[hostname]
+format = ' [$hostname]($style)'
+ssh_only = false
+ssh_symbol = 'SSH '
+disabled = true
+
+[java]
+format = ' [$symbol($version)]($style)'
+symbol = 'Java '
+
+[jobs]
+format = ' [$symbol$number]($style)'
+symbol = 'Jobs '
+
+[julia]
+format = ' [$symbol($version)]($style)'
+symbol = 'Julia '
+
+[kotlin]
+format = ' [$symbol($version)]($style)'
+symbol = 'Kotlin '
+
+[kubernetes]
+format = ' [$symbol$context( \($namespace\))]($style)'
+symbol = 'K8s '
+
+[line_break]
+disabled = false
+
+[localip]
+format = ' [$localipv4]($style)'
+ssh_only = true
+disabled = false
+
+[lua]
+format = ' [$symbol($version)]($style)'
+symbol = 'Lua '
+
+[memory_usage]
+format = ' $symbol [${ram}( \| ${swap})]($style)'
+threshold = 80
+symbol = 'Memory '
+disabled = false
+
+[meson]
+format = ' [$symbol$project]($style)'
+symbol = 'Meson '
+truncation_symbol = '…'
+
+[hg_branch]
+format = ' [$symbol$branch(:$topic)]($style)'
+symbol = 'Hg '
+
+[nim]
+format = ' [$symbol($version)]($style)'
+symbol = 'Nim '
+
+[nix_shell]
+format = ' [$symbol$state(\($name\))]($style)'
+symbol = 'Nix '
+
+[nodejs]
+format = ' [$symbol($version)]($style)'
+symbol = 'Node '
+
+[ocaml]
+format = ' [$symbol($version)( \($switch_indicator$switch_name\))]($style)'
+symbol = 'OCaml '
+
+[opa]
+format = ' [$symbol($version)]($style)'
+symbol = 'OPA '
+
+[openstack]
+format = ' [$symbol$cloud(\($project\))]($style)'
+symbol = 'OpenStack '
+
+[os]
+format = ' [$symbol]($style)'
+disabled = true
+[os.symbols]
+Alpaquita = 'Alpaquita'
+Alpine = 'Alpine'
+Amazon = 'Amazon'
+Android = 'Android'
+Arch = 'Arch'
+Artix = 'Artix'
+CentOS = 'CentOS'
+Debian = 'Debian'
+DragonFly = 'DragonFly'
+Emscripten = 'Emscripten'
+EndeavourOS = 'EndeavourOS'
+Fedora = 'Fedora'
+FreeBSD = 'FreeBSD'
+Garuda = 'Garuda'
+Gentoo = 'Gentoo'
+HardenedBSD = 'HardenedBSD'
+Illumos = 'Illumos'
+Linux = 'Linux'
+Mabox = 'Mabox'
+Macos = 'macOS'
+Manjaro = 'Manjaro'
+Mariner = 'Mariner'
+MidnightBSD = 'MidnightBSD'
+Mint = 'Mint'
+NetBSD = 'NetBSD'
+NixOS = 'NixOS'
+OpenBSD = 'OpenBSD'
+OpenCloudOS = 'OpenCloudOS'
+openEuler = 'openEuler'
+openSUSE = 'openSUSE'
+OracleLinux = 'OracleLinux'
+Pop = 'Pop_OS '
+Raspbian = 'Raspbian'
+Redhat = 'RedHat'
+RedHatEnterprise = 'RHEL'
+Redox = 'Redox'
+Solus = 'Solus'
+SUSE = 'SUSE'
+Ubuntu = 'Ubuntu'
+Unknown = 'OS'
+Windows = 'Windows'
+
+[package]
+format = ' [$symbol$version]($style)'
+symbol = 'Pkg '
+display_private = true
+disabled = false
+
+[perl]
+format = ' [$symbol($version)]($style)'
+symbol = 'Perl '
+
+[php]
+format = ' [$symbol($version)]($style)'
+symbol = 'PHP '
+
+[pijul_channel]
+format = ' [$symbol$channel]($style)'
+symbol = 'Pijul '
+
+[pulumi]
+format = '[$symbol($username@)$stack]($style)'
+symbol = 'Pulumi '
+
+[purescript]
+format = ' [$symbol($version)]($style)'
+symbol = 'PureScript '
+
+[python]
+format = ' [${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
+symbol = 'Python '
+
+[rlang]
+format = ' [$symbol($version)]($style)'
+symbol = 'R '
+
+[raku]
+format = ' [$symbol($version-$vm_version)]($style)'
+symbol = 'Raku '
+
+[red]
+format = ' [$symbol($version)]($style)'
+symbol = 'Red '
+
+[ruby]
+format = ' [$symbol($version)]($style)'
+symbol = 'Ruby '
+
+[rust]
+format = ' [$symbol($version)]($style)'
+symbol = 'Rust '
+
+[scala]
+format = ' [${symbol}(${version})]($style)'
+symbol = 'Scala '
+
+[shell]
+format = ' [$indicator]($style)'
+bash_indicator = 'bash'
+fish_indicator = 'fish'
+zsh_indicator = 'zsh'
+powershell_indicator = 'pwsh'
+ion_indicator = 'ion'
+elvish_indicator = 'esh'
+tcsh_indicator = 'tcsh'
+xonsh_indicator = 'xonsh'
+cmd_indicator = 'cmd'
+nu_indicator = 'nu'
+unknown_indicator = 'shell'
+disabled = true
+
+[shlvl]
+format = ' [$symbol$shlvl]($style)'
+threshold = 2
+symbol = 'SHLVL '
+disabled = true
+
+[singularity]
+format = ' [$symbol\[$env\]]($style)'
+symbol = 'Singularity '
+
+[solidity]
+format = ' [$symbol($version)]($style)'
+symbol = 'Solidity '
+
+[spack]
+format = ' [$symbol$environment]($style)'
+symbol = 'Spack '
+
+[status]
+format = ' [$symbol]($style)'
+symbol = '[✗](bold red)'
+success_symbol = '[✓](bold green)'
+not_executable_symbol = '!(bold yellow))'
+not_found_symbol = '?(bold red)'
+sigint_symbol = '[✗](bold red)'
+signal_symbol = '[⧖](bold yellow)'
+pipestatus_separator = '[|](bold green)'
+recognize_signal_code = true
+pipestatus = true
+map_symbol = true
+disabled = true
+[sudo]
+format = ' [$symbol]($style)'
+symbol = 'Admin'
+
+[swift]
+format = ' [$symbol($version)]($style)'
+symbol = 'Swift '
+
+[terraform]
+format = ' [$symbol$workspace]($style)'
+symbol = 'Terraform '
+
+[time]
+format = ' [$time]($style)'
+utc_time_offset = 'local'
+use_12hr = false
+disabled = true
+
+[username]
+format = ' [$user]($style)'
+show_always = true
+disabled = true
+
+[vagrant]
+format = ' [$symbol($version)]($style)'
+symbol = 'Vagrant '
+
+[vlang]
+format = ' [$symbol($version)]($style)'
+symbol = 'V '
+
+[vcsh]
+format = '[$symbol$repo]($style)'
+symbol = 'VCSH '
+
+[zig]
+format = ' [$symbol($version)]($style)'
+symbol = 'Zig '
