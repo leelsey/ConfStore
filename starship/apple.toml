@@ -1,6 +1,8 @@
 format = '$directory$character'
 right_format = '$username$hostname$localip$shlvl$singularity$kubernetes$vcsh$fossil_branch$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$docker_context$package$c$cmake$cobol$daml$dart$deno$dotnet$elixir$elm$erlang$fennel$golang$guix_shell$haskell$haxe$helm$java$julia$kotlin$gradle$lua$nim$nodejs$ocaml$opa$perl$php$pulumi$purescript$python$raku$rlang$red$ruby$rust$scala$swift$terraform$vlang$vagrant$zig$buf$nix_shell$conda$meson$spack$memory_usage$aws$gcloud$openstack$azure$env_var$crystal$custom$sudo$cmd_duration$line_break$jobs$battery$time$status$os$container$shell'
 add_newline = false
+scan_timeout = 30
+command_timeout = 500
 
 [aws]
 format = ' [$symbol($profile)( \($region\))( \[$duration\])]($style)'
@@ -76,8 +78,16 @@ symbol = 'Deno '
 
 [directory]
 truncation_length = 1
-read_only = ' [Locked] '
-# truncation_symbol = '…/'
+truncation_symbol = '…/'
+read_only = ' [Lock] '
+style = 'bold cyan'
+read_only_style = 'bold red'
+before_repo_root_style = 'bold cyan'
+repo_root_style = 'bold cyan'
+repo_root_format = '[]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
+[directory.substitutions]
+'com~apple~CloudDocs' = 'iCloud'
+'Dropbox' = 'Dropbox'
 
 [docker_context]
 format = '[$symbol$context]($style)'
@@ -379,15 +389,13 @@ symbol = 'Spack '
 format = ' [$symbol]($style)'
 symbol = '[✗](bold red)'
 success_symbol = '[✓](bold green)'
-not_executable_symbol = '!(bold yellow))'
-not_found_symbol = '?(bold red)'
+not_executable_symbol = '[!](bold red)'
+not_found_symbol = '[?](bold yellow)'
 sigint_symbol = '[✗](bold red)'
 signal_symbol = '[⧖](bold yellow)'
-pipestatus_separator = '[|](bold green)'
-recognize_signal_code = true
-pipestatus = true
-map_symbol = true
-disabled = true
+pipestatus_separator = '[ |](bold green)'
+disabled = false
+
 [sudo]
 format = ' [$symbol]($style)'
 symbol = 'Admin'
