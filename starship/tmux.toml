@@ -77,14 +77,14 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 truncation_length = 10
 truncation_symbol = '…/'
 read_only = '  '
-home_symbol = '󰋞 ~'
+home_symbol = '󰚡 ~'
 read_only_style = 'bold red'
 before_repo_root_style = 'bold purple'
 repo_root_style = 'bold purple'
 repo_root_format = '[ ]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 [directory.substitutions]
-'󰋞 ~/Library/Mobile Documents/com~apple~CloudDocs' = '󰀸 iCloud'
-'󰋞 ~/Library/CloudStorage/Dropbox' = '󰇣 Dropbox'
+'󰚡 ~/Library/Mobile Documents/com~apple~CloudDocs' = '󰀸 iCloud'
+'󰚡 ~/Library/CloudStorage/Dropbox' = '󰇣 Dropbox'
 
 [docker_context]
 format = ' [$symbol$context]($style)'
@@ -128,7 +128,7 @@ symbol = '󱇶 '
 [git_branch]
 format = ' [$symbol$branch(:$remote_branch)]($style)'
 always_show_remote = false
-symbol = ' '
+symbol = ' '
 only_attached = true
 disabled = false
 
@@ -138,7 +138,14 @@ tag_symbol = ' 󰓼 '
 disabled = false
 
 [git_state]
-format = ' \([$state($progress_current/$progress_total)]($style)\)'
+format = ' \([$state( $progress_current/$progress_total)]($style)\)'
+rebase = 'REBASING'
+merge = 'MERGING'
+revert = 'REVERTING'
+cherry_pick = 'CHERRY-PICKING'
+bisect = 'BISECTING'
+am = 'AM'
+am_or_rebase = 'AM/REBASE'
 disabled = false
 
 [git_metrics]
@@ -147,6 +154,18 @@ disabled = false
 
 [git_status]
 format = '( [\[$all_status$ahead_behind\]]($style))'
+conflicted = '='
+ahead = '⇡'
+behind = '⇣'
+diverged = '⇅'
+up_to_date = '∞'
+untracked = '?'
+stashed = '●'
+modified = '!'
+staged = '✚'
+renamed = '✎'
+deleted = '✖'
+typechanged = '↟'
 disabled = false
 
 [golang]

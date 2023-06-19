@@ -138,7 +138,14 @@ tag_symbol = ' 󰓼 '
 disabled = false
 
 [git_state]
-format = ' \([$state($progress_current/$progress_total)]($style)\)'
+format = ' [$state( $progress_current $progress_total)]($style)'
+rebase = ''
+merge = ''
+revert = '󰁯'
+cherry_pick = ''
+bisect = '󰨯'
+am = '󰲾'
+am_or_rebase = '󰲾'
 disabled = false
 
 [git_metrics]
@@ -146,7 +153,19 @@ format = '( [+$added]($added_style))( [-$deleted]($deleted_style))'
 disabled = false
 
 [git_status]
-format = '( [\[$all_status$ahead_behind\]]($style))'
+format = '( [$all_status$ahead_behind]($style))'
+conflicted = '󰇽'
+ahead = '󰛃'
+behind = '󰛀'
+diverged = '󰿋'
+up_to_date = '󱢍'
+untracked = '󰞋'
+stashed = '󱗜'
+modified = '󰀧'
+staged = '󰐖'
+renamed = '󰑕'
+deleted = '󰺬'
+typechanged = '󰧜'
 disabled = false
 
 [golang]
